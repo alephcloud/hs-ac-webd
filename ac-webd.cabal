@@ -1,0 +1,42 @@
+-- ------------------------------------------------------ --
+-- Copyright © 2014 AlephCloud Systems, Inc.
+-- ------------------------------------------------------ --
+
+Name:                ac-webd
+Version:             1.0
+Synopsis:            AlephCloud Web daemon
+
+Description:
+    AlephCloud Web daemon common bits
+
+Homepage:            https://github.com/alephcloud/hs-ac-webd
+License:             AllRightsReserved
+License-file:        LICENSE
+Author:              Vincent Hanquez
+Maintainer:          vhanquez@alephcloud.com
+Copyright:           Copyright (c) 2014 AlephCloud, Inc.
+Category:            AlephCloud
+Build-type:          Simple
+Cabal-version:       >= 1.10
+
+source-repository head
+    type:     git
+    location: https://github.com/alephcloud/hs-ac-webd
+
+Library
+    default-language: Haskell2010
+    hs-source-dirs: .
+
+    exposed-modules:
+        AlephCloud.WebDaemon
+
+    build-depends:
+        base == 4.*,
+        ac-logging >= 0.2,
+        directory,
+        scotty,
+        scotty-tls,
+        wai,
+        transformers,
+        optparse-applicative
+    ghc-options:    -Wall -fno-warn-orphans -fno-warn-missing-signatures
